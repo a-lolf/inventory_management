@@ -23,7 +23,6 @@ async def get_item(item_id: int):
 
 
 async def get_item_by_name(name: str):
-    import pdb; pdb.set_trace()
     db = await get_db()
     async with db.cursor() as cursor:
         await cursor.execute("SELECT * FROM items WHERE name=%s", (name,))
